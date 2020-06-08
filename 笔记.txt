@@ -1,0 +1,54 @@
+1.webpack
+因为要进行模块化开发
+
+安装:
+    npm install webpack -g
+    npm install webpack-cli -g  (快速开发工具)
+
+安装完成之后:
+        npx webpack 打包默认的src文件夹下的index.js 
+
+        将打包的结果放入默认的dist 文件夹中   
+
+2.使用webpack-dev-server  来完成热更新
+    安装 : npm install webpack-dev-server -s 
+
+   注意1: 因为该插件不是全局安装所以指令无效
+            要将这个指令打包给  npm  
+        在package.json中增加
+            "dev":"webpack-dev-server"        
+        然后再控制台中输入  npm  run dev  
+   最后  工程就会被运行本地服务器上       
+
+    注意2：webpack-dev-server 会将webpack的出口文件存在内存中!
+
+
+3. 了解webpack的配置文件 webpack.config.js
+
+
+4.打包资源( 样式 图片  字体  更加特殊的js代码)
+
+    打包 和  编译 css文件和style
+
+    安装  npm  install css-loader  style-loader -s
+
+    其他类型的样式文件同理!  less   scss
+    npm install less-loader -s
+
+    npm install sass-loader  node-sass  -s 
+
+
+    加载图片:  npm install  file-loader -s 
+
+
+ 5.webpack 和 vue 相结合 来完成模块化开发
+    5.1 npm  install  vue -s 
+    5.2 在工程中创建.vue文件 
+      5.2.1
+             npm install  vue-loader  -s  
+             npm install   vue-template-compiler  -s
+
+ 在webpack.config.js中 增加{test:/\.vue$/ ,use:['vue-loader']}
+
+
+   5.3  .vue文件:
